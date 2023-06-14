@@ -74,22 +74,59 @@ h3 {
   grid: ". b ." "s b c" "s k c" ". k .";
   margin-top: 3.75rem;
 }
-.card-container .outer-card {
+.card-container .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: initial;
+  position: relative;
+  background: var(--card-bg);
+  height: 15.625rem;
+  max-width: 21.875rem;
   border-radius: 0.625rem;
   box-shadow: 0 0.625rem 0.625rem 0 hsl(229, 15%, 88%);
+  padding: 1.875rem;
   overflow: hidden;
 }
-.card-container .outer-card.outer-team-builder {
+.card-container .card::after {
+  content: "";
+  position: absolute;
+  inset: 0 0 calc(100% - 0.25rem) 0;
+}
+.card-container .card.team-builder {
   grid-area: b;
 }
-.card-container .outer-card.outer-supervisor {
+.card-container .card.team-builder::after {
+  background: var(--first-card-clr);
+}
+.card-container .card.supervisor {
   grid-area: s;
 }
-.card-container .outer-card.outer-calculator {
+.card-container .card.supervisor::after {
+  background: var(--second-card-clr);
+}
+.card-container .card.calculator {
   grid-area: c;
 }
-.card-container .outer-card.outer-karma {
+.card-container .card.calculator::after {
+  background: var(--third-card-clr);
+}
+.card-container .card.karma {
   grid-area: k;
+}
+.card-container .card.karma::after {
+  background: var(--fourth-card-clr);
+}
+.card-container .card h3 {
+  font-size: 1.35rem;
+  text-transform: capitalize;
+}
+.card-container .card p {
+  font-size: 0.9rem;
+  margin-top: 0.625rem;
+}
+.card-container .card img {
+  align-self: flex-end;
 }
 @media (max-width: 1200px) {
   .card-container {
@@ -103,38 +140,4 @@ h3 {
     justify-content: center;
     align-items: center;
   }
-}
-
-.inner-card {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: initial;
-  height: 15.625rem;
-  max-width: 21.875rem;
-  background: var(--card-bg);
-  padding: 1.875rem;
-}
-.inner-card.inner-team-builder {
-  border-top: 0.25rem solid var(--first-card-clr);
-}
-.inner-card.inner-supervisor {
-  border-top: 0.25rem solid var(--second-card-clr);
-}
-.inner-card.inner-calculator {
-  border-top: 0.25rem solid var(--third-card-clr);
-}
-.inner-card.inner-karma {
-  border-top: 0.25rem solid var(--fourth-card-clr);
-}
-.inner-card h3 {
-  font-size: 1.35rem;
-  text-transform: capitalize;
-}
-.inner-card p {
-  font-size: 0.9rem;
-  margin-top: 0.625rem;
-}
-.inner-card img {
-  align-self: flex-end;
 }/*# sourceMappingURL=main.css.map */

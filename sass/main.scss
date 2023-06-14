@@ -45,25 +45,67 @@
 		'. k .';
 	margin-top: 3.75rem;
 
-	.outer-card {
+	.card {
+		@include flex(column, space-between, initial);
+		position: relative;
+		background: var(--card-bg);
+		height: 15.625rem;
+		max-width: 21.875rem;
 		border-radius: 0.625rem;
 		box-shadow: 0 0.625rem 0.625rem 0 hsl(229, 15%, 88%);
+		padding: 1.875rem;
 		overflow: hidden;
 
-		&.outer-team-builder {
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0 0 calc(100% - 0.25rem) 0;
+		}
+
+		&.team-builder {
 			grid-area: b;
+
+			&::after {
+				background: var(--first-card-clr);
+			}
 		}
 
-		&.outer-supervisor {
+		&.supervisor {
 			grid-area: s;
+
+			&::after {
+				background: var(--second-card-clr);
+			}
 		}
 
-		&.outer-calculator {
+		&.calculator {
 			grid-area: c;
+
+			&::after {
+				background: var(--third-card-clr);
+			}
 		}
 
-		&.outer-karma {
+		&.karma {
 			grid-area: k;
+
+			&::after {
+				background: var(--fourth-card-clr);
+			}
+		}
+
+		h3 {
+			font-size: 1.35rem;
+			text-transform: capitalize;
+		}
+
+		p {
+			font-size: 0.9rem;
+			margin-top: 0.625rem;
+		}
+
+		img {
+			align-self: flex-end;
 		}
 	}
 
@@ -76,43 +118,5 @@
 
 	@media (max-width: 900px) {
 		@include flex(column);
-	}
-}
-
-.inner-card {
-	@include flex(column, space-between, initial);
-	height: 15.625rem;
-	max-width: 21.875rem;
-	background: var(--card-bg);
-	padding: 1.875rem;
-
-	&.inner-team-builder {
-		border-top: 0.25rem solid var(--first-card-clr);
-	}
-
-	&.inner-supervisor {
-		border-top: 0.25rem solid var(--second-card-clr);
-	}
-
-	&.inner-calculator {
-		border-top: 0.25rem solid var(--third-card-clr);
-	}
-
-	&.inner-karma {
-		border-top: 0.25rem solid var(--fourth-card-clr);
-	}
-
-	h3 {
-		font-size: 1.35rem;
-		text-transform: capitalize;
-	}
-
-	p {
-		font-size: 0.9rem;
-		margin-top: 0.625rem;
-	}
-
-	img {
-		align-self: flex-end;
 	}
 }
