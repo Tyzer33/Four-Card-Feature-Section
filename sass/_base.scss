@@ -1,0 +1,14 @@
+body {
+	@include flex(column);
+	background: var(--background);
+	font-family: 'Poppins', sans-serif;
+	font-size: 15px;
+	color: var(--paragraph-clr);
+	padding: 2rem;
+}
+
+h1,
+h2,
+h3 {
+	color: var(--title-clr);
+}

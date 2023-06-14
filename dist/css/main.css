@@ -1,0 +1,140 @@
+:root {
+  --first-card-clr: hsl(0, 78%, 62%);
+  --second-card-clr: hsl(180, 62%, 55%);
+  --third-card-clr: hsl(212, 86%, 64%);
+  --fourth-card-clr: hsl(34, 97%, 64%);
+  --title-clr: hsl(234, 12%, 34%);
+  --paragraph-clr: hsl(229, 6%, 66%);
+  --background: hsl(0, 0%, 98%);
+  --card-bg: white;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: var(--background);
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: var(--paragraph-clr);
+  padding: 2rem;
+}
+
+h1,
+h2,
+h3 {
+  color: var(--title-clr);
+}
+
+.head-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 4.75rem;
+  text-align: center;
+}
+.head-title h1,
+.head-title h2 {
+  font-size: 2.4rem;
+}
+@media (max-width: 600px) {
+  .head-title h1,
+  .head-title h2 {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 475px) {
+  .head-title h1,
+  .head-title h2 {
+    font-size: 1.5rem;
+  }
+}
+.head-title h1 {
+  font-weight: 200;
+}
+.head-title h2 {
+  font-weight: 600;
+}
+.head-title p {
+  max-width: 31.25rem;
+  margin-top: 1rem;
+}
+
+.card-container {
+  display: grid;
+  grid-gap: 2rem;
+  grid: ". b ." "s b c" "s k c" ". k .";
+  margin-top: 3.75rem;
+}
+.card-container .outer-card {
+  border-radius: 0.625rem;
+  box-shadow: 0 0.625rem 0.625rem 0 hsl(229, 15%, 88%);
+  overflow: hidden;
+}
+.card-container .outer-card.outer-team-builder {
+  grid-area: b;
+}
+.card-container .outer-card.outer-supervisor {
+  grid-area: s;
+}
+.card-container .outer-card.outer-calculator {
+  grid-area: c;
+}
+.card-container .outer-card.outer-karma {
+  grid-area: k;
+}
+@media (max-width: 1200px) {
+  .card-container {
+    grid: ". b b ." "s s c c" ". k k .";
+  }
+}
+@media (max-width: 900px) {
+  .card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+.inner-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: initial;
+  height: 15.625rem;
+  max-width: 21.875rem;
+  background: var(--card-bg);
+  padding: 1.875rem;
+}
+.inner-card.inner-team-builder {
+  border-top: 0.25rem solid var(--first-card-clr);
+}
+.inner-card.inner-supervisor {
+  border-top: 0.25rem solid var(--second-card-clr);
+}
+.inner-card.inner-calculator {
+  border-top: 0.25rem solid var(--third-card-clr);
+}
+.inner-card.inner-karma {
+  border-top: 0.25rem solid var(--fourth-card-clr);
+}
+.inner-card h3 {
+  font-size: 1.35rem;
+  text-transform: capitalize;
+}
+.inner-card p {
+  font-size: 0.9rem;
+  margin-top: 0.625rem;
+}
+.inner-card img {
+  align-self: flex-end;
+}/*# sourceMappingURL=main.css.map */
